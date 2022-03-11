@@ -1,0 +1,245 @@
+<div class="head fixed-top" id="head">
+    <div class="top">
+        <a href="/app/index.php" id="logo" target="_self">
+            <img alt="中壢高商" src="/var/file/0/1000/img/logo0506ok.png" width="500" /> </a>
+        <div class="navtop-identity">
+            <a href="/app/index.php">首頁</a>
+            <a href="http://rpage.clvsc.tyc.edu.tw/p/412-1000-107-preview.php?Lang=zh-tw">在校生</a>
+            <a href="http://www.ncu.edu.tw" target="_blank">家長</a>
+            <a href="http://www.ncu.edu.tw" target="_blank">教師</a>
+            <a href="http://www.ncu.edu.tw" target="_blank">校友</a>
+            <a href=" https://www.facebook.com/clvscofficial" target="_blank">FB</a>
+        </div>
+    </div>
+
+    <div class="buttom">%HeadMenu</div>
+</div>
+<style type="text/css">
+    * {
+        outline: none !important;
+    }
+
+    .head {
+        width: 100%;
+        transition: top 0.8s ease-in-out, opacity 1s ease-in-out;
+        box-shadow: 0 0 8px rgb(0 0 0 / 20%);
+        background-color: #fff;
+    }
+
+    .fixed-top {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0px;
+        right: 0px;
+        opacity: 1;
+    }
+
+    /* 頭部隱藏 */
+    .hideUp {
+        opacity: 0;
+        top: -150px !important;
+    }
+
+    #logo {
+        display: block;
+    }
+
+    #head>.top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #DDDDDD;
+        padding: 10px;
+    }
+
+    .navtop-identity {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .navtop-identity a {
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 1.7rem;
+        font-weight: bold;
+        font-family: '標楷體';
+    }
+
+    .navtop-identity a:hover {
+        color: #56423d;
+        text-decoration: none;
+    }
+
+    .navbar-toggle {
+        top: 10px;
+    }
+
+    .mnavbar {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .hdmenu {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        background-color: #DDDDDD;
+        border-bottom: 3px solid #db624c;
+    }
+
+    .hdmenu .navbar-nav>li:first-child {
+        display: none;
+    }
+
+    .hdmenu .navbar-nav>li {
+        border: none;
+    }
+
+    .hdmenu .navbar-nav>li>a {
+        color: #E45D1E;
+        font-weight: 700 !important;
+    }
+
+    .hdmenu .navbar-nav>li>a:hover {
+        color: white;
+    }
+
+    .hdsearch {
+        display: none;
+    }
+
+    .msearch {
+        margin-top: 0px;
+    }
+
+    .main {
+        margin-top: 140px;
+    }
+
+    .nav-tabs {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 5px solid #56423D;
+    }
+
+    .nav-tabs>li {
+        box-sizing: border-box;
+        flex-grow: 1;
+        margin-left: 5px;
+        margin-right: 5px;
+        background-color: #EC775C;
+        text-align: center;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .nav-tabs>li:not(.active):hover {
+        background-color: #BEA6A0;
+    }
+
+    .nav-tabs>li.active {
+        background-color: #56423D;
+    }
+
+
+    .nav-tabs>li>a {
+        color: white;
+        border: none;
+        background-color: transparent;
+    }
+
+    .nav-tabs>li.active>a {
+        color: white;
+        border: none;
+        background-color: transparent;
+    }
+
+    .nav-tabs>li.active>a,
+    .nav-tabs>li.active>a:hover,
+    .nav-tabs>li.active>a:focus {
+        color: white;
+        border: none;
+        background-color: transparent;
+    }
+
+    .tab-content {
+        background-color: #f9f9f9;
+    }
+
+    @media (max-width: 768px) {
+        .navtop-identity {
+            flex-wrap: wrap;
+            flex-grow: 1;
+            margin-top: 20px;
+        }
+
+        .navtop-identity a {
+            flex-grow: 1;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .hdsearch {
+            display: flex;
+            flex-direction: row-reverse;
+            padding-left: 5px;
+        }
+
+        .msearch {
+            flex-grow: 1;
+        }
+
+        .main {
+            margin-top: 130px;
+        }
+
+        .wrap>.minner {
+            padding: 0px;
+        }
+
+        .hdmenu {
+            display: block;
+        }
+
+        .sch-toggle {
+            display: inline;
+        }
+    }
+</style>
+<script>
+    $('.navtop-identity').append($('.hdsearch'))
+    $('.navtop-identity').append($('.msearch'))
+    $('.msearch .navbar-form .input-group').append($('.msearch .navbar-form .input-group .btn'))
+    $('.navbar-collapse').removeClass('iosScrollToggle');
+    if ($(window).width() > 768) {
+        $('.msearch').removeClass('collapse')
+        $('.msearch').addClass('in')
+
+    }
+    var bodyClass = document.getElementById('head').classList;
+    lastScrollY = 0;
+    window.addEventListener('scroll', function () {
+        var st = this.scrollY;
+        // if (st < 120) {
+        //     bodyClass.remove('fixed-top');
+        //     bodyClass.remove('hideUp');
+        // } else 
+        // 判斷是向上捲動，而且捲軸超過 200px
+        if (st < lastScrollY || st < 200) {
+            bodyClass.remove('hideUp');
+        } else {
+            if ($('.navbar-collapse').hasClass('in')) {
+                $('.navbar-collapse').collapse('hide');
+                $('.navbar-toggle').removeClass('open');
+                $('.navbar-toggle').addClass('collapsed');
+            }
+            bodyClass.add('fixed-top');
+            bodyClass.add('hideUp');
+        }
+
+        lastScrollY = st;
+    });
+</script>
