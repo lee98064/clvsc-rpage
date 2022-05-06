@@ -426,6 +426,12 @@ a:hover {
 	background-color: transparent;
 }
 
+@media (max-width: 1024px) {
+	.nav-tabs>li {
+		margin-bottom: 20px;
+	}
+}
+
 .nav-tabs>li.active,
 .nav-tabs>li>a,
 .nav-tabs>li.active>a,
@@ -448,7 +454,7 @@ a:hover {
 
 .nav-tabs>li>a>h2 {
 	display: block;
-	color: #000;
+	color: #fff;
 	border: none;
 	background-color: transparent;
 	position: relative;
@@ -459,29 +465,12 @@ a:hover {
 
 .nav-tabs>li:not(.active):hover>a>h2,
 .nav-tabs>li.active>a>h2 {
-	color: #fff;
+	color: #000;
 	transition: all 0.3s;
 }
 
 
 .nav-tabs>li>a>h2::after {
-	content: '';
-	position: absolute;
-	height: 45px;
-	width: 45px;
-	background-color: #ffd200;
-	border-radius: 50px;
-	transform: translatey(-50%) translatex(-50%);
-	top: 30%;
-	left: 100%;
-	z-index: -1;
-	box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
-	transition: transform .25s .25s cubic-bezier(0, 0, .5, 2), width .25s cubic-bezier(0, 0, .5, 2), left .25s .25s cubic-bezier(0, 0, .5, 1.5), opacity .4s .30s cubic-bezier(0, 0, .5, 2);
-}
-
-
-.nav-tabs>li:hover>a>h2::after,
-.nav-tabs>li.active>a>h2::after {
 	left: calc(0% - 20px);
 	width: calc(100% + 40px);
 	height: 45px;
@@ -496,9 +485,33 @@ a:hover {
 		opacity .4s cubic-bezier(0, 0, .5, 2);
 }
 
+
+.nav-tabs>li:hover>a>h2::after,
+.nav-tabs>li.active>a>h2::after {
+	content: '';
+	position: absolute;
+	height: 45px;
+	width: 45px;
+	background-color: #ffd200;
+	border-radius: 50px;
+	transform: translatey(-50%) translatex(-50%);
+	top: 30%;
+	left: 100%;
+	z-index: -1;
+	box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
+	transition: transform .25s .25s cubic-bezier(0, 0, .5, 2), width .25s cubic-bezier(0, 0, .5, 2), left .25s .25s cubic-bezier(0, 0, .5, 1.5), opacity .4s .30s cubic-bezier(0, 0, .5, 2);
+}
+
+.nav-tabs>li:not(.active):hover>a>h2::after {
+	background-color: #aa0000;
+}
+
 .tab-content {
 	background-color: #f9f9f9;
+	border-top: 4px solid #db624c;
 }
+
+
 
 @media screen and (max-width: 1024px) {
 	.nav-tabs>li {
