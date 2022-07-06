@@ -476,6 +476,7 @@ a:hover {
   justify-content: center;
 }
 
+/* 公告分類文字顏色與樣式 */
 .nav-tabs > li > a > h2 {
   display: block;
   color: #fff;
@@ -493,6 +494,7 @@ a:hover {
   transition: all 0.3s;
 }
 
+/* 公告分類tab特效 */
 .nav-tabs > li > a > h2::after {
   content: "";
   position: absolute;
@@ -511,6 +513,7 @@ a:hover {
     opacity 0.4s cubic-bezier(0, 0, 0.5, 2);
 }
 
+/* 公告分類tab滑鼠移入 */
 .nav-tabs > li:hover > a > h2::after,
 .nav-tabs > li.active > a > h2::after {
   height: 45px;
@@ -531,6 +534,7 @@ a:hover {
   background-color: var(--navtabs-background-hover);
 }
 
+/* 公告分類tab內容 */
 .tab-content {
   background-color: var(--navtabs-content-background);
   border-top: 4px solid var(--navtabs-content-border);
