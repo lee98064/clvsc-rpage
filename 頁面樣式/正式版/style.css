@@ -2,20 +2,21 @@
 :root {
   --main-color: #728a7a;
   --secondary-color: #98be3c;
-  --font-color-dark: #000;
-  --font-color-light: #fff;
   --background-dark: #000;
   --background-light: #fff;
 
   /* 文字顏色 */
-  --font-color: #111111;
+  --font-color-dark: #000;
+  --font-color-light: #fff;
 
   --navbar-nav-hover-background: transparent;
   --navbar-nav-hover-text: #728a7a;
 
   /* 導覽列背景顏色 */
-  --navbar-background: #dddddd;
-
+  --navbar-background-top: #dddddd;
+  --navbar-background-bottom: #dddddd;
+  --navbar-eng-title: rgba(0,0,0,0.4);
+    
   /* 分頁公告背景顏色 */
   --navtabs-background: #728a7a;
 
@@ -28,6 +29,12 @@
 
   /* 分頁內容邊框顏色 */
   --navtabs-content-border: #728a7a;
+
+  /*選單背景色彩 */
+  --list-background-color: #dddddd;
+  --list-background-color-hover: #fff;
+    
+/*   --main-background: #f4f8f9; */
 }
 
 * {
@@ -39,6 +46,7 @@
 body {
   margin: 0;
   font-size: 1.6rem;
+    background-color: var(--main-background);
   /* 網站文字預設字號大小 => 1.6rem 即 16px */
 }
 
@@ -361,13 +369,13 @@ input:focus {
   }
 
   #Dyn_head #head .bottom .hdmenu > .nav.navbar-nav .dropdown-menu{
-    background-color: var(--navbar-background);
+    background-color: var(--list-background-color);
     box-shadow: none;
     border-radius: 0;
   }
     
   #Dyn_head #head .bottom .hdmenu > .nav.navbar-nav li:hover{
-    background-color: #fff;
+    background-color: var(--list-background-color-hover);
   }
 }
 
@@ -376,19 +384,19 @@ input:focus {
 @media (min-width: 1262px) {
   #Dyn_head #head {
     position: relative;
-    background-color: var(--navbar-background);
+    background-color: var(--navbar-background-top);
     border-bottom: 5px solid var(--main-color);
-    padding-left: 10%;
-    padding-right: 10%
   }
     
   #Dyn_head #head .top {
     display: flex;
     position: relative;
-    background-color: var(--navbar-background);
+    background-color: var(--navbar-background-top);
     justify-content: space-around;
     align-items: flex-start;
     margin-bottom: -10px;
+    padding-left: 10%;
+    padding-right: 10%
   }
 
   #Dyn_head #head .top #logo{
@@ -420,7 +428,7 @@ input:focus {
     display: block;
     font-weight: 800;
     font-size: 15px; 
-    color: rgba(0,0,0,0.4);
+    color: var(--navbar-eng-title);
   }
     
   #Dyn_head #head .top .navtop-identity {
@@ -467,6 +475,11 @@ input:focus {
     font-style: italic;
     font-weight: 600;
   }
+    
+    #Dyn_head #head .bottom{
+        padding-top: 10px;
+        background-color: var(--navbar-background-bottom);
+    }
 
   #Dyn_head #head .bottom .mnavbar {
     height: 100%;
@@ -659,12 +672,12 @@ input:focus {
 .nav-tabs > li:hover > a > h2::after,
 .nav-tabs > li.active > a > h2::after {
   outline: none;
-  height: 45px;
-  width: 45px;
+  height: 30px;
+  width: 30px;
   background-color: var(--navtabs-background-active);
   border-radius: 50px;
   transform: translatey(-50%) translatex(-50%);
-  top: 20%;
+  top: 27%;
   left: 100%;
   box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.25s 0.25s cubic-bezier(0, 0, 0.5, 2),
@@ -811,7 +824,7 @@ input:focus {
 .owl-carousel .owl-dots .owl-dot {
   display: inline-block;
   zoom: 1;
-  *display: inline;
+/*   *display: inline; */
 }
 
 .owl-carousel .owl-dots .owl-dot span {
@@ -847,7 +860,7 @@ input:focus {
 
 .dropdown-menu {
   min-width: 200px;
-  background-color: var(--navbar-background);
+  background-color: var(--list-background-color);
 }
 
 .dropdown-menu > li > a {
@@ -872,8 +885,8 @@ input:focus {
 }
 
 .list-group-item a:hover {
-  color: var(--font-color);
-  background-color: #fff;
+  color: var(--font-color-dark);
+  background-color: var(--list-background-color-hover);
 }
 
 .list-group-item .dropdown-menu {
@@ -882,19 +895,19 @@ input:focus {
   box-shadow: none;
   text-align: left;
   list-style: none;
-  background-color: var(--navbar-background);
+  background-color: var(--list-background-color);
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .list-group-item .dropdown-menu li a {
-  /* background-color: var(--navbar-background); */
+/*   background-color: var(--list-background-color); */
   font-weight: 400;
 }
 
 .list-group-item .dropdown-menu li a:hover {
   background-color: #fff;
-  color: var(--font-color);
+  color: var(--font-color-dark);
   font-weight: 400;
 }
 
